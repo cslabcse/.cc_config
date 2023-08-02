@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-int graph[50][50], visited[50], path[50], isCyclic, d, path[50];
+int graph[50][50], visited[50], path[50], isCyclic;
 int count, bfscall;
 void bfs(int n, int start)
 {
     int queue[n], parent[n], parentnode, r = -1, f = -1;
     visited[start] = 1;
     queue[++r] = start;
-    path[start] = 1;
     parent[r] = -1;
 
     count++;
@@ -18,15 +17,9 @@ void bfs(int n, int start)
         printf("%c---->", start + 65);
         for (int i = 0; i < n; i++)
         {
-            if (d == 1)
-            {
-                if (i != parentnode && visited[i] && graph[start][i] && path[i])
-                    isCyclic = 1;
-            }
-            else
-            {
-                if (i != parentnode && visited[i] && graph[start][i])
-                    isCyclic = 1;
+            if (i != parentnode && visited[i] && graph[start][i])
+            { 
+                isCyclic = 1;
             }
             if (visited[i] == 0 && graph[start][i])
             {
@@ -37,7 +30,6 @@ void bfs(int n, int start)
             }
         }
     }
-    path[start] = 0;
 }
 void main()
 {
