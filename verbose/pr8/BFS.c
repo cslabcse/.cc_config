@@ -37,8 +37,6 @@ void main()
     int n;
     printf("Enter the Number of Vertices : ");
     scanf("%d", &n);
-    printf("Enter 1 if Graph is Directed Else 0 : ");
-    scanf("%d", &d);
     printf("Enter the Adjacency Matrix\n");
     for (int i = 0; i < n; i++)
     {
