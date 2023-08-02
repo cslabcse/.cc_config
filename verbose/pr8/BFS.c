@@ -41,8 +41,7 @@ void bfs(int n, int start)
 }
 void main()
 {
-    // Generate Dense and Simply Connected Graph and append to file in a+ mode for different vertices
-    // CORRECTNESS
+    
     int n;
     printf("Enter the Number of Vertices : ");
     scanf("%d", &n);
